@@ -1,0 +1,14 @@
+base/
+base_old/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.wav
+*.mp3
+api_key.bin
+chat-history*.json
+livingmemory.db
+__pycache__/
+*.pyc
+.env
