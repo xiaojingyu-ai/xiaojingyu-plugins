@@ -43,8 +43,7 @@
 
 ```
 1. 整个「插件-日常」文件夹拷到：
-   D:\大肥鱼\AstrBot\data\plugins\astrbot_plugin_dafeiyu_daily
-
+    data/plugins/astrbot_plugin_dafeiyu_daily
 2. 后台 → 插件 → 大肥鱼日常 → 配置
    city      你所在城市（默认 普宁）
    morning_at  早报时间，不用就把 enable_weather 关掉
