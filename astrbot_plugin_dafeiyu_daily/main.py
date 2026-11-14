@@ -14,7 +14,7 @@ from astrbot.api.message_components import Plain, Record
 from astrbot.core.message.message_event_result import MessageChain
 from astrbot.api import logger
 
-MEM_DB = r"D:\大肥鱼\AstrBot\data\plugin_data\astrbot_plugin_livingmemory\livingmemory.db"
+MEM_DB = ""   # 留空则用 AstrBot 数据目录下的默认位置；也可在配置里填 memory_db
 
 
 @register("dafeiyu_daily", "小鲸鱼", "天气早报 / 定时提醒 / 每晚回忆", "1.0.0")
@@ -22,7 +22,8 @@ class DailyPlugin(Star):
     def __init__(self, context: Context, config: dict | None = None):
         super().__init__(context)
         self.config = config or {}
-        self.city = self.config.get("city") or "普宁"
+        self.city = (self.config.get("city") or "").strip()
+        self.mem_db = (self.config.get("memory_db") or MEM_DB or "").strip()
         self.morning_at = self.config.get("morning_at") or "08:00"
         self.remind_at = self.config.get("remind_at") or "21:30"
         self.enable_weather = bool(self.config.get("enable_weather", True))
@@ -134,6 +135,8 @@ class DailyPlugin(Star):
 
     # ---------- 天气 ----------
     async def _weather_text(self) -> str:
+        if not self.city:
+            return ""
         try:
             url = f"https://wttr.in/{self.city}?format=j1&lang=zh"
             timeout = aiohttp.ClientTimeout(total=20)
@@ -158,10 +161,23 @@ class DailyPlugin(Star):
             logger.warning(f"[daily] weather: {exc}")
             return ""
 
+    def _default_db(self) -> str:
+        """猜 AstrBot 数据目录下的记忆库位置（不写死盘符）。"""
+        try:
+            base = self.context.get_data_dir()
+            p = os.path.join(str(base), "plugin_data",
+                             "astrbot_plugin_livingmemory", "livingmemory.db")
+            return p if os.path.exists(p) else ""
+        except Exception:  # noqa: BLE001
+            return ""
+
     # ---------- 回忆 ----------
     def _pick_memory(self) -> str:
         try:
-            con = sqlite3.connect(MEM_DB, timeout=5)
+            db = self.mem_db or self._default_db()
+            if not db or not os.path.exists(db):
+                return ""
+            con = sqlite3.connect(db, timeout=5)
             cur = con.cursor()
             rows = cur.execute(
                 "SELECT content FROM memory_atoms WHERE status='active' AND length(content) > 10 ORDER BY importance DESC LIMIT 80"

@@ -1,8 +1,8 @@
 {
   "city": {
-    "description": "天气用的城市名（中文或拼音都行）",
+    "description": "天气城市（留空则不报天气）",
     "type": "string",
-    "default": "普宁"
+    "default": ""
   },
   "morning_at": {
     "description": "早报时间 HH:MM",
@@ -63,5 +63,10 @@
     "description": "语音模型",
     "type": "string",
     "default": "moss-tts-1.5-flash"
+  },
+  "memory_db": {
+    "description": "长期记忆库路径（留空自动找 AstrBot 数据目录）",
+    "type": "string",
+    "default": ""
   }
 }
