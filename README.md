@@ -43,7 +43,7 @@
 
 ```
 1. 整个「插件-日常」文件夹拷到：
-   D:\大肥鱼\AstrBot\data\plugins\astrbot_plugin_dafeiyu_daily
+   data/plugins/astrbot_plugin_dafeiyu_daily
 
 2. 后台 → 插件 → 大肥鱼日常 → 配置
    city      天气城市（留空则不报天气）
