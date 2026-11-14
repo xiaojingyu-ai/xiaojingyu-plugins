@@ -13,7 +13,7 @@
 
 ```
 把整个文件夹拷到：
-D:\大肥鱼\AstrBot\data\plugins\astrbot_plugin_dafeiyu_paint
+ data/plugins/astrbot_plugin_dafeiyu_paint
 
 后台 → 插件 → 大肥鱼画图 → 配置 api_key → 保存 → 重启 AstrBot
 ```
