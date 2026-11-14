@@ -1,0 +1,42 @@
+{
+  "api_key": {
+    "description": "硅基流动 API Key（sk- 开头）",
+    "type": "string",
+    "default": ""
+  },
+  "rounds": {
+    "description": "每多少轮自动画一张（0 关闭自动）",
+    "type": "int",
+    "default": 10
+  },
+  "daily_cap": {
+    "description": "每天最多自动画几张",
+    "type": "int",
+    "default": 3
+  },
+  "steps": {
+    "description": "Edit 推理步数（20~30）",
+    "type": "int",
+    "default": 30
+  },
+  "cfg": {
+    "description": "Edit 的 CFG（越大改动越明显，建议 5~8）",
+    "type": "float",
+    "default": 6.5
+  },
+  "model": {
+    "description": "没有基准图时用的文生图模型",
+    "type": "string",
+    "default": "Tongyi-MAI/Z-Image-Turbo"
+  },
+  "image_size": {
+    "description": "文生图尺寸",
+    "type": "string",
+    "default": "960x1280"
+  },
+  "manual_cap": {
+    "description": "手动 /画 每天最多几张",
+    "type": "int",
+    "default": 10
+  }
+}

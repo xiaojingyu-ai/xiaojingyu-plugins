@@ -1,0 +1,8 @@
+{
+  "api_key": {"description": "MOSS API Key（sk- 开头）", "type": "string", "default": ""},
+  "voice_id": {"description": "音色 ID（默认 16岁少女）", "type": "string", "default": "db9a72de-0e9e-470c-8936-8ef27df2fa84"},
+  "model": {"description": "模型", "type": "string", "default": "moss-tts-1.5-flash"},
+  "pause_ms": {"description": "句末停顿毫秒（0 关闭）", "type": "int", "default": 500},
+  "max_chars": {"description": "最长合成字数（超了截断）", "type": "int", "default": 120},
+  "auto": {"description": "自动把她的回复也发一条语音（费积分）", "type": "bool", "default": false}
+}

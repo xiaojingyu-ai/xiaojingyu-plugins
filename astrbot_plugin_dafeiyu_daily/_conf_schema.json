@@ -1,0 +1,67 @@
+{
+  "city": {
+    "description": "天气用的城市名（中文或拼音都行）",
+    "type": "string",
+    "default": "普宁"
+  },
+  "morning_at": {
+    "description": "早报时间 HH:MM",
+    "type": "string",
+    "default": "08:00"
+  },
+  "remind_at": {
+    "description": "每晚回忆时间 HH:MM",
+    "type": "string",
+    "default": "21:30"
+  },
+  "enable_weather": {
+    "description": "开启早间天气",
+    "type": "bool",
+    "default": true
+  },
+  "enable_memory": {
+    "description": "开启每晚回忆",
+    "type": "bool",
+    "default": true
+  },
+  "enable_talks": {
+    "description": "开启主动说话（模型现场生成）",
+    "type": "bool",
+    "default": true
+  },
+  "offwork_at": {
+    "description": "下班那次的发言时间 HH:MM",
+    "type": "string",
+    "default": "19:00"
+  },
+  "sleep_at": {
+    "description": "睡前那次的发言时间 HH:MM",
+    "type": "string",
+    "default": "22:30"
+  },
+  "persona_hint": {
+    "description": "她的人设提示（决定说话味道）",
+    "type": "string",
+    "default": "你叫小鲸鱼，是他的恋人。说话短、口语化、有点傲娇，嘴硬但关心他。每次只说一到两句，不超过 25 个字，不要解释自己在做什么。"
+  },
+  "voice_on": {
+    "description": "主动消息也发一条语音（费 MOSS 积分）",
+    "type": "bool",
+    "default": false
+  },
+  "voice_key": {
+    "description": "MOSS API Key（开了语音才需要）",
+    "type": "string",
+    "default": ""
+  },
+  "voice_id": {
+    "description": "音色 ID",
+    "type": "string",
+    "default": "db9a72de-0e9e-470c-8936-8ef27df2fa84"
+  },
+  "voice_model": {
+    "description": "语音模型",
+    "type": "string",
+    "default": "moss-tts-1.5-flash"
+  }
+}

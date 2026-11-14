@@ -1,0 +1,6 @@
+name: astrbot_plugin_dafeiyu_daily
+display_name: 大肥鱼日常
+desc: 早间天气、每晚回忆一条旧记忆、/提醒 定时提醒
+version: 1.0.0
+author: 小鲸鱼
+repo: local

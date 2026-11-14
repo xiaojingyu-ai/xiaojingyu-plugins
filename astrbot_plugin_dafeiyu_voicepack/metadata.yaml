@@ -1,0 +1,6 @@
+name: astrbot_plugin_dafeiyu_voicepack
+display_name: 大肥鱼语音包
+desc: 固定语音包，命令：/语音 早安
+version: 1.0.0
+author: 小鲸鱼
+repo: local

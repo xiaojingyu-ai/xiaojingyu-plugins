@@ -1,0 +1,7 @@
+{
+  "enable": {
+    "description": "启用语音包",
+    "type": "bool",
+    "default": true
+  }
+}

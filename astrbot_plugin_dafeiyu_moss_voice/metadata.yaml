@@ -1,0 +1,6 @@
+name: astrbot_plugin_dafeiyu_moss_voice
+display_name: 大肥鱼MOSS语音
+desc: 用 MOSS TTS 合成语音，命令：/说话 文本
+version: 1.0.0
+author: 小鲸鱼
+repo: local

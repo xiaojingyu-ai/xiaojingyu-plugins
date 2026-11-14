@@ -1,0 +1,6 @@
+name: astrbot_plugin_dafeiyu_paint
+display_name: 大肥鱼画图
+desc: 用硅基流动的绘图模型（FLUX / Kolors）让小鲸鱼画图，命令：/画 描述
+version: 1.0.0
+author: 小鲸鱼
+repo: local
